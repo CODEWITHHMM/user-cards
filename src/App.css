@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container for all user cards */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Individual user card */
+.ec-card {
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Hover effect to make it interactive */
+.ec-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Flexbox layout for the user card */
+.row {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  /* Allows items to wrap on smaller screens */
 }
 
-.App-link {
-  color: #61dafb;
+/* Image column for the avatar */
+.col-auto img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  /* Ensure images don't distort */
+  border-radius: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Column for the user details */
+.col {
+  margin-left: 20px;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* Headings for user names */
+h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Paragraph styling for user details */
+p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and larger mobile screens */
+@media (max-width: 768px) {
+  .col-auto img {
+    width: 150px;
+    height: 150px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .col {
+    margin-left: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+/* For small mobile screens */
+@media (max-width: 480px) {
+  .ec-card {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .row {
+    flex-direction: column;
+    /* Stack the avatar and details vertically */
+    align-items: flex-start;
+  }
+
+  .col-auto img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .col {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 13px;
   }
 }
