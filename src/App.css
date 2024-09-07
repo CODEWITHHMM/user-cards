@@ -4,13 +4,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* background-color: #212529; */
+  line-height: 1.5;
 }
 
 /* Container for all user cards */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2px;
 }
 
 /* Individual user card */
@@ -42,7 +44,7 @@ body {
   height: 200px;
   object-fit: cover;
   /* Ensure images don't distort */
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 /* Column for the user details */
